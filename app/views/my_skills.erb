@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>My Skills</h1>
+
+  <% if @all_skills %>
+  <ul>
+    <% @number = 1 %>
+      <% @all_skills.each do |skill| %>
+        <li> <%= @number %>.  <a href="/editskill/<%= skill.id %>"><%= skill.name %></a>, Skill Type: <%= skill.context %></li>
+        <% @number += 1 %>
+      <% end %>
+  </ul>
+  <% end %>
+
+  <a href="/">Home</a>
+
+  <% if session[:user_id] %>
+    <p><a href="/add_skill">Add Skill</a></p>
+    <p><a href="/myskills">My Skill</a></p>
+  <% end %>
+</div>
+

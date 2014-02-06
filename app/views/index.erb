@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>User Skills and Levels</h1>
+
+  <%# TODO: display the skills and proficiency levels for each user ... %>
+
+  <div id="proficiencies">
+    <% if @all_proficiencies %>
+  <ul>
+    <% @number = 1 %>
+      <% @all_proficiencies.each do |proficiency| %>
+        <li> <%= @number %>. <%= User.find(proficiency.user_id).name %></a>, Skill Type:  <%= Skill.find(proficiency.skill_id).name %>, Years Experience:  <%= proficiency.years_experience %>, Formal Training: <%= proficiency.formal_training %></li>
+        <% @number += 1 %>
+      <% end %>
+  </ul>
+  <% end %>
+
+  </div>
+
+  <% if session[:user_id] %>
+    <p><a href="/add_skill">Add Skill</a></p>
+    <p><a href="/myskills">See my skills</a></p>
+  <% end %>
+
+</div>

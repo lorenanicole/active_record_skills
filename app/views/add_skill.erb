@@ -1,0 +1,29 @@
+<div class="container">
+
+
+  <% if @skill %>
+    <h3>You've successfully added <%= @skill.name %> to your skills! </h3>
+  <% end %>
+
+  <div id="add_skill">
+    <br>
+    <form name="add_skill" action="/add_skill" method="post">
+      <input type="text" name="name" placeholder="What skill do you have?"><br>
+      Is your skill - <br><br>
+      <input type="radio" name="context" value="technical">technical<br>
+      <input type="radio" name="context" value="creative">creative
+      Years Training:<br>
+      <input type="number" name="years_experience" min="0" max="100"<br><br>
+      Have you been formally trained?<br>
+      <input type="radio" name="formal_training" value="true">true<br>
+      <input type="radio" name="formal_training" value="false">false<br>
+      <button type="submit">Skill it!</button><br>
+    </form>
+  </div>
+  <br><br<
+  <p align="right"><a href="/">Home</a></p>
+  <% if session[:user_id] %>
+    <p><a href="/myskills">My Skills</a></p>
+  <% end %>
+
+</div>

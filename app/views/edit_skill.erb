@@ -1,0 +1,21 @@
+<div class="container">
+
+  <div id="add_skill">
+    <br>
+    <form name="edit_skill" action="/editskill/<%= @skill.id %>" method="post">
+      Skill name: <input type="text" name="name" placeholder="<%= @skill.name %>"><br>
+      Update skill type, you previously stated it was <%= @skill.context %>:<br><br>
+      <input type="radio" name="context" value="technical">technical<br>
+      <input type="radio" name="context" value="creative">creative<br><br>
+      Years Training, you previously stated you had <%= @proficiency.years_experience %> years experience: <br><br>
+      <input type="number" name="years_experience" min="0" max="100"<br><br>
+      Have you been formally trained? You previously said <%= @proficiency.formal_training %>. <br>
+      <input type="radio" name="formal_training" value="true">true<br>
+      <input type="radio" name="formal_training" value="false">false<br>
+      <button type="submit">Update it!</button><br>
+    </form>
+  </div>
+  <br><br<
+  <p align="right"><a href="/">Home</a></p>
+
+</div>
